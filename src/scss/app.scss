@@ -1,0 +1,132 @@
+body {
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  font-family: Inter;
+  background-color: #F5F5F5;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+
+  .header {
+    height: 84px;
+    width: 100vw;
+    background: #FFFFFF;
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px 162px;
+      gap: 308px;
+      isolation: isolate;
+
+      position: absolute;
+      width: 1440px;
+      height: 84px;
+      left: 0px;
+      top: 0px;
+
+      .logo-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 12px;
+        font-size: 24px;
+
+        span {
+          font-family: Inter;
+          font-weight: 600;
+          margin-left: 15px;
+        }
+      }
+
+      .header-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 60px;
+        position: absolute;
+        width: 275px;
+        height: 20px;
+        left: calc(50% - 275px / 2 + 0.5px);
+
+
+        span {
+          margin-right: 15px;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+
+  .sort-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+
+    position: absolute;
+    width: 315px;
+    height: 360px;
+    left: 162px;
+    top: 124px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #EAEBED;
+    border-radius: 12px;
+
+    .sort-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      gap: 25px;
+
+      width: 330px;
+      height: 20px;
+
+      h4 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 4px;
+        width: 115px;
+        height: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #ACADB9;
+      }
+    }
+
+    .industry {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 8px;
+      width: 275px;
+      height: 69px;
+    }
+  }
+}
+
+
+
+
