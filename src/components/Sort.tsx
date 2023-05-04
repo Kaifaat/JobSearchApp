@@ -1,12 +1,22 @@
 import React from "react";
 import CloseIcon from '@mui/icons-material/Close';
+import {Button, FormControl, InputLabel, MenuItem, TextField} from "@mui/material";
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 
 
 
 const Sort: React.FC = () => {
 
+    const [industry, setIndustry] = React.useState('');
     const sortRef = React.useRef<HTMLDivElement>(null);
+
+
+
+    const handleChange = (event: SelectChangeEvent) => {
+        setIndustry(event.target.value as string);
+    };
+
 
 
     return (
@@ -22,9 +32,31 @@ const Sort: React.FC = () => {
 
             </div>
             <div className='industry'>
-                <h4>Отрасль</h4>
+                <h5>Отрасль</h5>
+                <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Выберите отрасль</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={industry}
+                        label="industry"
+                         size="small"
+                        onChange={handleChange}
+                    >
+                        <MenuItem value={10} >Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                </FormControl>
             </div>
-            <div className='salary'></div>
+            <div className='salary'>
+               <h5>Оклад</h5>
+                <TextField InputLabelProps={{ shrink: true }} size="small"/>
+                <TextField InputLabelProps={{ shrink: true }} size="small"/>
+
+            </div>
+
+            <Button variant="contained" className='filter-button'>Применить</Button>
 
         </div>
     )
