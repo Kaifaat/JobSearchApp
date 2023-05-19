@@ -42,7 +42,6 @@ const vacancySlice = createSlice({
             state.items = [];
         })
         builder.addCase(fetchVacancies.fulfilled, (state, action) => {
-            //@ts-ignore
             state.items = action.payload.objects;
             state.status = Status.SUCCESS;
             state.total = action.payload.total;

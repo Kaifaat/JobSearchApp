@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {geFavouritesFromLS} from "../../utils/getFavouritesFromLS";
-import {Vacancy, FavouritesList, VacancyMainParams} from "../vacancy/types";
+import {FavouritesList, VacancyMainParams} from "../vacancy/types";
 
 const FavouritesData = geFavouritesFromLS();
 
@@ -17,14 +17,6 @@ const favouritesSlice = createSlice({
             // const findItem = state.items.find(obj => obj.id === action.payload.id);
             console.log(FavouritesData)
         },
-
-        // minusItem(state, action: PayloadAction<string>) {
-        //     const findItem = state.items.find(obj => obj.id === action.payload);
-        //     if(findItem) {
-        //         findItem.count--;
-        //     }
-        // },
-
         removeItem(state, action: PayloadAction<VacancyMainParams>) {
             state.items = state.items.filter((obj) => obj.id !== action.payload.id);
         },

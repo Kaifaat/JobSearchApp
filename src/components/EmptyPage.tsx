@@ -8,11 +8,7 @@ const EmptyPage = () => {
         <div className='not-found-page-wrapper'>
             <img src={NotfoundImage}/>
             Упс, здесь еще ничего нет!
-            <Link to='/'>
-            <Button
-                variant="contained"
-            >Поиск вакансий</Button>
-        </Link>
+
         </div>
     );
 };

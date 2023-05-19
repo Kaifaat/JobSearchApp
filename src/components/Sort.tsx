@@ -77,7 +77,7 @@ const Sort: React.FC = () => {
                         id="demo-simple-select"
                         value={categoryId}
                         label="industry"
-                        size="small"
+                        // size="small"
                         MenuProps={MenuProps}
                         onChange={handleChange}
                     >

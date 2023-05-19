@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
-import {CategoryList, FilterSliceState, Sort, SortPropertyEnum} from "./types";
+import {CategoryList, FilterSliceState} from "./types";
 
-import {Status, Vacancy} from "../vacancy/types";
+import {Status} from "../vacancy/types";
 import {fetchCategories} from "./asyncActions";
 
 const initialState: FilterSliceState = {
@@ -12,10 +12,6 @@ const initialState: FilterSliceState = {
     paymentTo: '',
     paymentFrom: '',
     currentPage: 1,
-    // sort: {
-    //     name: '',
-    //     sortProperty: SortPropertyEnum.PRICE_DESC
-    // }
 }
 
 const filterSlice = createSlice({
@@ -31,9 +27,6 @@ const filterSlice = createSlice({
         setSearchValueRedux(state, action: PayloadAction<string>) {
             state.searchValue = action.payload;
         },
-        // setSort(state, action: PayloadAction<Sort>) {
-        //     state.sort = action.payload;
-        // },
         setCurrentPageRedux(state, action: PayloadAction<number>) {
             state.currentPage = action.payload;
         },
@@ -51,10 +44,6 @@ const filterSlice = createSlice({
             } else {
                 state.currentPage = 1;
                 state.categoryId = '0';
-                // state.sort = {
-                //     name: 'популярности',
-                //     sortProperty: SortPropertyEnum.RATING_DESC,
-                // }
             }
         },
     },

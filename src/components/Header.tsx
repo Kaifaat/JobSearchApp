@@ -3,9 +3,7 @@ import appLogo from '../assets/img/Union.png';
 import { Link } from "react-router-dom";
 
 
-
 export const Header: React.FC = () => {
-
 
     return (
         <div className="header">
@@ -24,9 +22,6 @@ export const Header: React.FC = () => {
                     <span>Избранное</span>
                     </Link>
                 </div>
-                <div></div>
-
-
             </div>
         </div>
     )

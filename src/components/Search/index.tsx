@@ -1,7 +1,6 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../Redux/store";
-import debounce from 'debounce';
 import styles from './Search.module.scss'
 import {setCurrentPageRedux, setSearchValueRedux} from "../../Redux/filter/slice";
 import {Button} from "@mui/material";
@@ -10,17 +9,11 @@ import {fetchVacancies} from "../../Redux/vacancy/asyncActions";
 
 const Search: React.FC = () => {
     const dispatch = useAppDispatch();
-    const {categoryId, paymentFrom, paymentTo, searchValue} = useSelector(selectCategoryData);
+    const {categoryId, paymentFrom, paymentTo} = useSelector(selectCategoryData);
     const [search, setSearch] = React.useState('');
     const [currentPage, setCurrentPage] = React.useState(1);
     const inputRef = React.useRef<HTMLInputElement>(null);
 
-    // const updateSearchValue = React.useCallback(
-    //     debounce((str: string) => {
-    //         dispatch(setSearchValueRedux(str));
-    //     }, 150),
-    //     [],
-    // )
     const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(event.target.value);
     };

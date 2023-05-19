@@ -1,16 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import {useAppDispatch} from "../../Redux/store";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { Link } from "react-router-dom";
-import {Vacancy, VacancyMainParams} from "../../Redux/vacancy/types";
+import {VacancyMainParams} from "../../Redux/vacancy/types";
 import {addItem, removeItem} from "../../Redux/favourites/slice";
 
-// import {selectCartItemById} from "../../Redux/cart/selectors";
-// import {CartItem} from "../../Redux/cart/types";
-// import {addItem} from "../../Redux/cart/slice";
 
 type VacancyBlockProps = {
     profession: string;
@@ -72,7 +68,6 @@ const VacancyBlock: React.FC<VacancyBlockProps> = ({ profession, firm_name, town
         console.log(reload)
     }
 
-
     return (
         <div className="vacancy-block-wrapper">
             <div className="vacancy-block">
@@ -87,11 +82,11 @@ const VacancyBlock: React.FC<VacancyBlockProps> = ({ profession, firm_name, town
                     <LocationOnIcon color='disabled' fontSize='small'/>
                     {town_title}
                 </div>
-
             </div>
             {isFavourite ? (
                 <StarIcon
                     data-elem={'vacancy-' + id + '-shortlist-button'}
+                    className='fill-star'
                     fontSize='large'
                     sx={{ borderRadius: 20 }}
                     onClick={onClickRemoveStar}
@@ -99,11 +94,11 @@ const VacancyBlock: React.FC<VacancyBlockProps> = ({ profession, firm_name, town
             ) : (
                 <StarBorderIcon
                     data-elem={'vacancy-' + id + '-shortlist-button'}
+                    className='empty-star'
                     sx={{ borderRadius: 20 }}
                     onClick={onClickAddStar}
                 />
             )}
-
         </div>
     )
 }

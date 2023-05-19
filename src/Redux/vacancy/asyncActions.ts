@@ -3,7 +3,6 @@ import axios from "axios";
 import {AccessToken, SearchVacancyParams, Vacancy, VacancyList} from "./types";
 
 
-
 export const fetchToken =  createAsyncThunk(
     'token/fetchTokenStatus',
     async () => {

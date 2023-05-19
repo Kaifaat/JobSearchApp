@@ -1,6 +1,5 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
-import {fetchVacancies} from "../vacancy/asyncActions";
 
 
 export const fetchCategories =  createAsyncThunk(
@@ -13,24 +12,6 @@ export const fetchCategories =  createAsyncThunk(
         return data;
     }
 )
-
-
-// export const fetchFilteredVacancies = createAsyncThunk(
-//     'filter/fetchVacancies',
-//     async (params) => {
-//         const {
-//             categoryId,
-//             paymentFrom,
-//             paymentTo
-//         } =  params;
-//         const { data } = await axios.get (
-//             `https://startup-summer-2023-proxy.onrender.com/2.0/vacancies/payment_from=${paymentFrom}/payment_to=${paymentTo}/catalogues=${categoryId}/?count=4&page=1`
-//         )
-//         console.log(data)
-//         return data
-//     }
-// )
-
 
 axios.defaults.headers.common = {
     'x-secret-key': 'GEU4nvd3rej*jeh.eqp',

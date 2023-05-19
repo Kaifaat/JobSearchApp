@@ -1,9 +1,9 @@
-import React, {useEffect} from "react";
+import React from "react";
 import Sort from "../components/Sort";
 import Search from "../components/Search";
 import VacancyBlock from "../components/VacancyBlock";
 import {fetchToken, fetchVacancies} from "../Redux/vacancy/asyncActions";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {useAppDispatch} from "../Redux/store";
 import {selectVacancyData} from "../Redux/vacancy/selectors";
 import {CircularProgress, createTheme, Pagination, Stack, ThemeProvider} from "@mui/material";
@@ -27,16 +27,12 @@ export const HomePage: React.FC = () => {
     const {categoryId, paymentFrom, paymentTo, searchValue} = useSelector(selectCategoryData);
     const {currentPage} = useSelector(selectCategoryData)
     const {items, total, status} = useSelector(selectVacancyData);
-    const [isLoading, setIsLoading] = React.useState(true);
     const [page, setPage] = React.useState(1);
     const dispatch = useAppDispatch();
-
     const search = searchValue ? `${searchValue}` : '';
 
 
     const getVacancies = async () => {
-        setIsLoading(true);
-
         dispatch(
             fetchVacancies({
                     categoryId,
@@ -77,7 +73,6 @@ export const HomePage: React.FC = () => {
                 <div className='search-block'>
                     <Search />
                 </div>
-
                 {(items.length < 1 && status === 'success') ? (
                     <EmptyPage />
                 ) : items.length < 1 ? (
@@ -93,7 +88,9 @@ export const HomePage: React.FC = () => {
                     <ThemeProvider theme={theme}>
                         <Stack spacing={2}>
                             <Pagination
-                                count={Math.floor(total / 4)}
+                                count={
+                                    total > 500 ? Math.floor(500 / 4) : (Math.floor(total / 4) - 1)
+                                   }
                                 page={currentPage}
                                 shape="rounded"
                                 color='primary'
@@ -105,7 +102,6 @@ export const HomePage: React.FC = () => {
                         </Stack>
                     </ThemeProvider>
                 </div>
-
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import {Vacancy, VacancyMainParams} from "../Redux/vacancy/types";
+import {VacancyMainParams} from "../Redux/vacancy/types";
 
 export const geFavouritesFromLS = () => {
     const data = localStorage.getItem('favourites');

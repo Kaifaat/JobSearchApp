@@ -9,7 +9,6 @@ export type SearchVacancyParams = {
     id?: string;
 }
 
-
 export type VacancyList = {
     objects: Vacancy[];
     total: number;
@@ -28,12 +27,9 @@ export type Vacancy = {
         type_of_work: {
             title: string;
         }
-        //town_title: string;
         catalogues_title: string;
-        // type_of_work_title: string;
         payment_to: number;
         payment_from: number;
-        // currency: number;
         vacancyRichText?: any;
         id: string;
 }

@@ -1,11 +1,18 @@
 import React from 'react';
-import NotfoundImage from '../assets/img/Frame.png'
-import {Button} from "@mui/material";
 import EmptyPage from "../components/EmptyPage";
+import {Button} from "@mui/material";
+import {Link} from "react-router-dom";
 
 const NotFoundPage = () => {
     return (
+        <div className='not-found-block'>
         <EmptyPage/>
+    <Link to='/'>
+        <Button
+            variant="contained"
+        >Поиск вакансий</Button>
+    </Link>
+        </div>
     );
 };
 

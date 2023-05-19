@@ -1,8 +1,8 @@
 .input {
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding-left: 34px;
-  padding-right: 14px;
-  width: 770px;
+  padding-right: 101px;
+  width: 665px;
   height: 48px;
   border-radius: 12px;
   font-size: 16px;
@@ -10,7 +10,6 @@
   &:focus {
     outline: none;
   }
-
 }
 
 .icon {
@@ -46,6 +45,6 @@
 
 .searchButton {
   position: absolute;
-  left: 725px;
+  left: 717px;
   top: -42px;
 }
