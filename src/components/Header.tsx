@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
                 </div>
                 </Link>
                 <div className='header-menu'>
-                    <Link to='/vakansy'>
+                    <Link to='/'>
                     <span>Поиск вакансий</span>
                     </Link>
                     <Link to='/favourites'>

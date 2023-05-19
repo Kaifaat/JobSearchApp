@@ -1,27 +1,50 @@
 export type SearchVacancyParams = {
-    page?: string;
+    categoryId?: string;
     sortBy?: string;
     order?: string;
-    category?: string;
+    paymentFrom?: string;
+    paymentTo?: string;
     search?: string;
-    currentPage?: string;
+    currentPage?: number;
+    id?: string;
 }
 
 
 export type VacancyList = {
     objects: Vacancy[];
+    total: number;
+}
+
+export type FavouritesList = {
+    items: VacancyMainParams[];
 }
 
 export type Vacancy = {
         profession: string;
         firm_name: string;
-        town_title: string;
+        town: {
+            title: string;
+        }
+        type_of_work: {
+            title: string;
+        }
+        //town_title: string;
         catalogues_title: string;
-        type_of_work_title: string;
+        // type_of_work_title: string;
         payment_to: number;
         payment_from: number;
-        currency: number;
+        // currency: number;
+        vacancyRichText?: any;
+        id: string;
+}
 
+export type VacancyMainParams = {
+    profession: string;
+    payment_to: number;
+    payment_from: number;
+    town_title: string;
+    type_of_work_title: string;
+    id: string;
 }
 
 export type AccessToken = {
@@ -36,5 +59,7 @@ export enum Status {
 
 export interface VacancySliceState {
     items: Vacancy[];
+    item: Vacancy;
     status: 'loading' | 'success' | 'error';
+    total: number;
 }

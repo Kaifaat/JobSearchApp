@@ -25,22 +25,34 @@ axios.defaults.headers.common = {
 };
 
 
-export const fetchVacancies = createAsyncThunk(
+export const fetchVacancies = createAsyncThunk<VacancyList, SearchVacancyParams>(
     'vacancy/fetchVacanciesStatus',
     //@ts-ignore
-    async () => {
-        //  const {
-        // page
-        // //     sortBy,
-        // //     order,
-        // //     category,
-        // //     search,
-        // //     currentPage
-        //  } = params;
+    async (params) => {
+         const {
+             categoryId,
+             paymentFrom,
+             paymentTo,
+             search,
+             currentPage
+         } = params;
         const { data } = await axios.get<VacancyList>(
-            // `https://6322ee4e362b0d4e7dd6b76b.mockapi.io/Items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`
-            `https://startup-summer-2023-proxy.onrender.com/2.0/vacancies/?count=4&page=1`
+            `https://startup-summer-2023-proxy.onrender.com/2.0/vacancies/?keyword=${search}&payment_from=${paymentFrom}&payment_to=${paymentTo}&catalogues=${categoryId}&count=4&page=${currentPage}&no_agreement=1`
         );
         console.log(data)
-        return data.objects;
+        return data;
     });
+
+
+export const fetchOneVacancy = createAsyncThunk(
+    'vacancy/fetchOneVacancy',
+    //@ts-ignore
+    async (id: string) => {
+        const { data } = await axios.get<Vacancy>(
+            `https://startup-summer-2023-proxy.onrender.com/2.0/vacancies/${id}`
+        );
+        console.log(data)
+        return data;
+    });
+
+

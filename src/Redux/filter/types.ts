@@ -12,9 +12,17 @@ export type Sort = {
     sortProperty: SortPropertyEnum;
 }
 
+export type CategoryList = {
+    items: string;
+}
+
 export interface FilterSliceState {
+    items: CategoryList[],
+    status: 'loading' | 'success' | 'error',
     searchValue: string,
-    categoryId: number,
+    categoryId: string,
+    paymentFrom: string,
+    paymentTo: string,
     currentPage: number,
-    sort: Sort
+    // sort: Sort
 }
