@@ -67,12 +67,14 @@ const Sort: React.FC = () => {
                 </span>
 
             </div>
+            <div className='filter-inputs-wrapper'>
             <div className='industry'>
                 <h5>Отрасль</h5>
                 <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label" >Отрасль</InputLabel>
                     <Select
                         data-elem="industry-select"
+                        className='industry-select'
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         value={categoryId}
@@ -121,6 +123,7 @@ const Sort: React.FC = () => {
                                dispatch(setPaymentToRedux(event.target.value))
                            }}
                 />
+            </div>
             </div>
 
             <Button

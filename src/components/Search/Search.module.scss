@@ -7,6 +7,23 @@
   border-radius: 12px;
   font-size: 16px;
 
+  @media only screen and (max-width: 1355px) {
+    width: 565px;
+  }
+  @media only screen and (max-width: 810px) {
+    width: 463px;
+  }
+  @media only screen and (max-width: 670px) {
+    width: 361px;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 246px;
+  }
+  @media only screen and (max-width: 390px) {
+    width: 241px;
+    padding-right: 26px;
+  }
+
   &:focus {
     outline: none;
   }
@@ -26,25 +43,27 @@
   position: relative;
   width: 770px;
   height: 48px;
-}
 
-.clearIcon {
-  width: 18px;
-  height: 18px;
-  opacity: 0.3;
-  position: absolute;
-  right: 11px;
-  top: 10px;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.5;
+  @media (max-width: 1355px) {
+    width: 565px;
   }
-
 }
 
 .searchButton {
   position: absolute;
   left: 717px;
   top: -42px;
+
+  @media (max-width: 1355px) {
+    left: 617px;
+  }
+  @media (max-width: 810px) {
+    left: 517px;
+  }
+  @media (max-width: 670px) {
+    left: 417px;
+  }
+  @media (max-width: 500px) {
+    left: 351px;
+  }
 }

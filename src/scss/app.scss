@@ -4,7 +4,7 @@ $sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
 body {
   position: relative;
   //width: 1440px;
-  height: 900px;
+  //height: 900px;
   font-family: Inter, serif;
   background-color: #F5F5F5;
 
@@ -32,6 +32,21 @@ body {
       left: 0px;
       top: 0px;
 
+      @media only screen and (max-width: 1115px) {
+        justify-content: center;
+        padding-left: 0;
+        gap: 10%;
+      }
+      @media only screen and (max-width: 500px) {
+        padding-left: 20px;
+        gap: 7%;
+      }
+      @media only screen and (max-width: 390px) {
+        gap:5%;
+      }
+
+
+
       .logo-container {
         display: flex;
         flex-direction: row;
@@ -39,6 +54,11 @@ body {
         padding: 0px;
         gap: 12px;
         font-size: 24px;
+
+        @media only screen and (max-width: 390px) {
+          gap:0;
+          font-size: 20px;
+        }
 
         span {
           font-family: Inter, serif;
@@ -57,11 +77,26 @@ body {
         height: 20px;
         left: calc(50% - 275px / 2 + 0.5px);
 
+        @media only screen and (max-width: 500px) {
+          gap: 18px;
+          padding-right: 30px;
+        }
+        @media only screen and (max-width: 390px) {
+          gap: 10px;
+        }
+
 
         span {
           font-size: 16px;
           line-height: 20px;
           font-weight: 500;
+
+          @media only screen and (max-width: 500px) {
+            font-size: 14px;
+          }
+          @media only screen and (max-width: 390px) {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -76,6 +111,22 @@ body {
     //height: 55vh;
     width: 100vw;
     margin-top: 30px;
+
+    @media only screen and (max-width: 1115px) {
+      flex-direction: column;
+      margin-top: 15px;
+    }
+
+  }
+
+  .filter-inputs-wrapper {
+
+
+    @media only screen and (max-width: 1115px) {
+      display: flex;
+      flex-direction: row;
+      width:100%;
+    }
   }
 
 
@@ -94,12 +145,35 @@ body {
     border-radius: 12px;
     margin-right: 28px;
 
+    @media only screen and (max-width: 1115px) {
+      width: 642px;
+      height: 195px;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 15px;
+      margin-right: 0;
+    }
+    @media only screen and (max-width: 670px) {
+      width: 415px;
+    }
+    @media only screen and (max-width: 500px) {
+      width: 355px;
+    }
+    @media only screen and (max-width: 390px) {
+      width: 280px;
+      height: 190px;
+    }
+
     h5 {
       margin-bottom: 8px;
       margin-top: 0;
       font-size: 16px;
       font-weight: 700;
-    }
+
+      @media (max-width: 1115px) {
+      font-size: 14px;
+      margin-bottom: 0;
+    }}
 
     .sort-title {
       display: flex;
@@ -111,6 +185,20 @@ body {
       gap: 25px;
       width: 320px;
       height: 20px;
+
+      @media (max-width: 1115px) {
+        width: 642px;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 670px) {
+        width: 418px;
+      }
+      @media only screen and (max-width: 500px) {
+        width: 355px;
+      }
+      @media only screen and (max-width: 390px) {
+        width: 284px;
+      }
 
       h4 {
         font-size: 20px;
@@ -139,6 +227,16 @@ body {
       gap: 8px;
       width: 315px;
       margin-bottom: 20px;
+
+      label {
+        top: -3px;
+        line-height: 1rem;
+
+      }
+
+      .industry-select {
+        height: 39px;
+      }
       //height: 69px;
     }
 
@@ -151,10 +249,18 @@ body {
       width: 315px;
       //height: 119px;
 
+      @media (max-width: 1115px) {
+        margin-left: 15px;
+      }
+
 
       div {
         width: 100%;
         margin-bottom: 4px;
+
+        @media (max-width: 670px) {
+          width: 100%;
+        }
       }
     }
 
@@ -168,7 +274,16 @@ body {
       width: 315px;
       height: 40px;
       margin-top: 20px;
+
+      @media (max-width: 1115px) {
+        margin-top: 0;
+      }
+      @media (max-width: 390px) {
+        height: 30px;
+        width: 115px;
+      }
     }
+
   }
 
   .main-block {
@@ -181,8 +296,34 @@ body {
     left: 560px;
     top: 124px;
 
+    @media (max-width: 1115px) {
+     align-items: center;
+    }
+
     .search-block {
       margin-bottom: 16px;
+
+      @media (max-width: 1115px) {
+        margin-bottom: 16px;
+        width: 100%;
+        margin-left: 70px;
+      }
+      @media (max-width: 810px) {
+        margin-left: 173px;
+      }
+      @media (max-width: 670px) {
+        margin-bottom: 16px;
+        width: 100%;
+        margin-left: 276px;
+      }
+      @media (max-width: 500px) {
+        margin-left: 391px;
+      }
+      @media (max-width: 390px) {
+        margin-left: 468px;
+      }
+
+
     }
 
     .vacancy-list {
@@ -243,9 +384,27 @@ body {
     border: 1px solid #EAEBED;
     border-radius: 12px;
 
-    @media (max-width: 1285px) {
+    @media (max-width: 1355px) {
       width: 650px;
+      height: 96px;
     }
+    @media (max-width: 810px) {
+      width: 550px;
+    }
+    @media (max-width: 670px) {
+      width: 450px;
+    }
+    @media (max-width: 500px) {
+      width: 350px;
+      padding: 16px;
+      gap: 3px;
+      font-size: 16px;
+    }
+    @media (max-width: 390px) {
+      width: 270px;
+      font-size: 14px;
+    }
+
 
     h4 {
       font-family: 'Inter';
@@ -255,6 +414,15 @@ body {
       line-height: 24px;
       margin: 0;
       color: #5E96FC;
+
+      @media (max-width: 670px) {
+        line-height: 18px;
+        font-size: 18px;
+      }
+      @media (max-width: 390px) {
+        line-height: 16px;
+        font-size: 16px;
+      }
     }
 
     .vacancy-block {
@@ -264,6 +432,9 @@ body {
       padding: 0px;
       gap: 12px;
 
+      @media (max-width: 390px) {
+        gap: 6px;
+      }
 
       .vacancy-block-salary {
         font-weight: bolder;
