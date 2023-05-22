@@ -146,15 +146,18 @@ body {
     margin-right: 28px;
 
     @media only screen and (max-width: 1115px) {
-      width: 642px;
+      width: 678px;
       height: 195px;
       align-items: center;
       padding: 10px;
       margin-bottom: 15px;
       margin-right: 0;
     }
+    @media only screen and (max-width: 810px) {
+      width: 578px;
+    }
     @media only screen and (max-width: 670px) {
-      width: 415px;
+      width: 478px;
     }
     @media only screen and (max-width: 500px) {
       width: 355px;
@@ -190,8 +193,11 @@ body {
         width: 642px;
         margin-bottom: 10px;
       }
+      @media (max-width: 810px) {
+        width: 573px;
+      }
       @media (max-width: 670px) {
-        width: 418px;
+        width: 463px;
       }
       @media only screen and (max-width: 500px) {
         width: 355px;
@@ -227,6 +233,16 @@ body {
       gap: 8px;
       width: 315px;
       margin-bottom: 20px;
+
+      @media only screen and (max-width: 670px) {
+        max-width: 250px;
+      }
+      @media only screen and (max-width: 500px) {
+        max-width: 200px;
+      }
+      @media only screen and (max-width: 390px) {
+        max-width: 150px;
+      }
 
       label {
         top: -3px;
