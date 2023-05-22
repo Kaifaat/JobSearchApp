@@ -21,7 +21,7 @@ const FullVacancyPage = () => {
     return (
         <div className='full-vacancy-wrapper'>
             {status === 'success' ? (
-                <div>
+                <div className='full-vacancy-block'>
                     <VacancyBlock
                         data-elem={'vacancy-' + item.id}
                         key={item.id}

@@ -79,7 +79,7 @@ body {
 
         @media only screen and (max-width: 500px) {
           gap: 18px;
-          padding-right: 30px;
+          padding-right: 37px;
         }
         @media only screen and (max-width: 390px) {
           gap: 10px;
@@ -172,7 +172,7 @@ body {
 
       @media (max-width: 1115px) {
       font-size: 14px;
-      margin-bottom: 0;
+      margin-bottom: 4px;
     }}
 
     .sort-title {
@@ -345,6 +345,12 @@ body {
     flex-direction: column;
     align-items: center;
 
+    .full-vacancy-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .description {
       display: flex;
       flex-direction: column;
@@ -356,8 +362,35 @@ body {
       border: 1px solid #EAEBED;
       border-radius: 12px;
 
+      @media (max-width: 1355px) {
+        width: 650px;
+      }
+      @media (max-width: 810px) {
+        width: 550px;
+      }
+      @media (max-width: 670px) {
+        width: 450px;
+      }
+      @media (max-width: 500px) {
+        width: 350px;
+        padding: 16px;
+        gap: 3px;
+        font-size: 16px;
+      }
+      @media (max-width: 390px) {
+        width: 270px;
+        font-size: 14px;
+      }
+
       b {
         font-size: 20px;
+
+        @media (max-width: 670px) {
+          font-size: 18px;
+        }
+        @media (max-width: 500px) {
+          font-size: 16px;
+        }
       }
 
       li {
