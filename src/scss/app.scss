@@ -3,8 +3,6 @@ $sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
 
 body {
   position: relative;
-  //width: 1440px;
-  //height: 900px;
   font-family: Inter, serif;
   background-color: #F5F5F5;
 
@@ -12,7 +10,6 @@ body {
     text-decoration: none;
     color: black;
   }
-
 
   .header {
     height: 84px;
@@ -45,8 +42,6 @@ body {
         gap:5%;
       }
 
-
-
       .logo-container {
         display: flex;
         flex-direction: row;
@@ -64,6 +59,10 @@ body {
           font-family: Inter, serif;
           font-weight: 600;
           margin-left: 15px;
+
+          @media only screen and (max-width: 390px) {
+            margin-left: 10px;
+          }
         }
       }
 
