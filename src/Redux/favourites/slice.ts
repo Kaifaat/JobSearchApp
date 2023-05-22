@@ -14,8 +14,6 @@ const favouritesSlice = createSlice({
     reducers: {
         addItem(state, action: PayloadAction<VacancyMainParams>) {
             state.items.push(action.payload)
-            // const findItem = state.items.find(obj => obj.id === action.payload.id);
-            console.log(FavouritesData)
         },
         removeItem(state, action: PayloadAction<VacancyMainParams>) {
             state.items = state.items.filter((obj) => obj.id !== action.payload.id);

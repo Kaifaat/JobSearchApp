@@ -38,7 +38,6 @@ const filterSlice = createSlice({
         },
         setFilters(state,action: PayloadAction<FilterSliceState>) {
             if (Object.keys(action.payload).length) {
-                // state.sort = action.payload.sort;
                 state.currentPage = Number(action.payload.currentPage);
                 state.categoryId = String(action.payload.categoryId);
             } else {

@@ -8,7 +8,6 @@ export const fetchCategories =  createAsyncThunk(
         const { data } = await axios.get(
             `https://startup-summer-2023-proxy.onrender.com/2.0/catalogues/`
         );
-        console.log(data);
         return data;
     }
 )

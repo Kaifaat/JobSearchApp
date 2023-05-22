@@ -11,7 +11,6 @@ const Favourites = () => {
     const {items} = useSelector(selectFavourites);
 
     const checkFavourites = items.filter((obj: any, i) => {
-        console.log(i)
         const range = 4;
         if ((i < (page * range)) && (i >= ((page - 1) * range))) {
             return obj

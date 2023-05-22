@@ -61,8 +61,6 @@ export const HomePage: React.FC = () => {
 
     React.useEffect(() => {
         getVacancies();
-         console.log(search);
-
     }, [page])
 
 
@@ -92,7 +90,7 @@ export const HomePage: React.FC = () => {
                                     total > 500 ? Math.floor(500 / 4) : (Math.floor(total / 4) - 1)
                                    }
                                 page={currentPage}
-                                shape="rounded"
+                                shape='rounded'
                                 color='primary'
                                 onChange={(_, num) => {
                                     setPage(num)

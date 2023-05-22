@@ -25,9 +25,9 @@ const VacancyBlock: React.FC<VacancyBlockProps> = ({ profession, firm_name, town
     const dispatch = useAppDispatch();
     const [reload, setReload] = React.useState<boolean>();
 
-    const arrFavourite = localStorage.getItem('favourites');
-    const isFavourite1 =  JSON.parse(arrFavourite || '[]');
-    const isFavourite = isFavourite1.find((obj:any) => obj.id === id);
+    const arrFavourites = localStorage.getItem('favourites');
+    const favouritesList =  JSON.parse(arrFavourites || '[]');
+    const isFavourite = favouritesList.find((obj:any) => obj.id === id);
 
     const item: VacancyMainParams = {
         profession,
@@ -47,9 +47,6 @@ const VacancyBlock: React.FC<VacancyBlockProps> = ({ profession, firm_name, town
         dispatch(addItem(item));
         favourites.push(item)
          localStorage.setItem('favourites', JSON.stringify(favourites));
-
-        console.log(reload)
-
     }
 
     const onClickRemoveStar = () => {
@@ -60,19 +57,16 @@ const VacancyBlock: React.FC<VacancyBlockProps> = ({ profession, firm_name, town
             return obj.id !== id
 
         })
-        console.log(filteredFavourites)
         dispatch(removeItem(item))
 
         localStorage.setItem('favourites', JSON.stringify(filteredFavourites));
-
-        console.log(reload)
     }
 
     return (
         <div className="vacancy-block-wrapper">
             <div className="vacancy-block">
                 <Link to={`/vacancy/${id}`}>
-                <h4 className="vacancy-block-title">{profession}</h4>
+                <p className="vacancy-block-title">{profession}</p>
                 </Link>
                     <div className="vacancy-block-salary">
                         от {payment_from} {currency}

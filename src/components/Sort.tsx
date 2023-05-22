@@ -60,16 +60,15 @@ const Sort: React.FC = () => {
         <div ref={sortRef} className="sort-container">
 
             <div className='sort-title'>
-                <h4>Фильтры</h4>
+                <p className='filter-title'>Фильтры</p>
                 <span onClick={resetFilter}>
                     Сбросить все
                     <CloseIcon fontSize="small"/>
                 </span>
-
             </div>
             <div className='filter-inputs-wrapper'>
             <div className='industry'>
-                <h5>Отрасль</h5>
+                <p className='select-title'>Отрасль</p>
                 <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label" >Отрасль</InputLabel>
                     <Select
@@ -79,7 +78,6 @@ const Sort: React.FC = () => {
                         id="demo-simple-select"
                         value={categoryId}
                         label="industry"
-                        // size="small"
                         MenuProps={MenuProps}
                         onChange={handleChange}
                     >
@@ -88,7 +86,7 @@ const Sort: React.FC = () => {
                 </FormControl>
             </div>
             <div className='salary'>
-               <h5>Оклад</h5>
+                <p className='select-title'>Оклад</p>
                 <TextField
                     data-elem="salary-from-input"
                     InputLabelProps={{ shrink: true }}
